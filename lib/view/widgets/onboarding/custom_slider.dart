@@ -1,14 +1,19 @@
+import 'package:ecommerce_course/controller/onboarding_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../data/data_source/static/static.dart';
 
-class CustomSlider extends StatelessWidget {
+class CustomSlider extends GetView<OnboardingControllerImp> {
   const CustomSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  PageView.builder(
-      itemCount: onboardingList.length,
+      onPageChanged: (val){
+        controller.onPageChanged(val);
+      },
+      itemCount:  onboardingList.length,
       itemBuilder: (context, i) => Column(
         children: [
           const SizedBox(height: 40),

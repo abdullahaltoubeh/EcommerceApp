@@ -1,5 +1,7 @@
+import 'package:ecommerce_course/controller/onboarding_controller.dart';
 import 'package:ecommerce_course/core/constant/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../data/data_source/static/static.dart';
 
@@ -8,7 +10,7 @@ class CustomDoteController extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return GetBuilder<OnboardingControllerImp>(builder: (controller)=>Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ...List.generate(
@@ -16,7 +18,7 @@ class CustomDoteController extends StatelessWidget {
                 (index) => AnimatedContainer(
               margin: const EdgeInsets.only(right: 5),
               duration: const Duration(milliseconds: 900),
-              width: 6,
+              width: controller.currentIndex==index ? 20: 6,
               height: 6,
               decoration: BoxDecoration(
                   color: AppColor.primaryColor,
@@ -24,6 +26,6 @@ class CustomDoteController extends StatelessWidget {
                   BorderRadius.circular(10)),
             ))
       ],
-    );
+    ));
   }
 }

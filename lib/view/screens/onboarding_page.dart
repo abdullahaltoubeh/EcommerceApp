@@ -1,7 +1,9 @@
+import 'package:ecommerce_course/controller/onboarding_controller.dart';
 import 'package:ecommerce_course/view/widgets/onboarding/custom_button.dart';
 import 'package:ecommerce_course/view/widgets/onboarding/custom_dote_controller.dart';
 import 'package:ecommerce_course/view/widgets/onboarding/custom_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../data/data_source/static/static.dart';
 
@@ -10,6 +12,7 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(OnboardingControllerImp());
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(

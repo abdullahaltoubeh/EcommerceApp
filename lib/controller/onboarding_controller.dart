@@ -6,6 +6,9 @@ abstract class OnboardingController extends GetxController{
 }
 
 class OnboardingControllerImp extends OnboardingController{
+
+  int currentIndex=0;
+
   @override
   next() {
     // TODO: implement next
@@ -14,8 +17,8 @@ class OnboardingControllerImp extends OnboardingController{
 
   @override
   onPageChanged(int val) {
-    // TODO: implement onPageChanged
-    throw UnimplementedError();
+     currentIndex= val;
+     update();
   }
 
 }
